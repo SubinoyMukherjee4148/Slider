@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="slider.css">
+    <title>slider</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="utf-8"></script>
+    
+</head>
+<body>
+    <div class="main">
+        <label>Output</label>
+        <div id="output"></div>
+        <label>Result</label>
+        <input type="text" id="box" value="border-radius: 0% 0% 0% 0% ">
+        <input type="range" min="0" max="100" value="0" id="slider1">
+        <input type="range" min="0" max="100" value="0" id="slider2">
+        <input type="range" min="0" max="100" value="0" id="slider3">
+        <input type="range" min="0" max="100" value="0" id="slider4">
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#slider1, #slider2, #slider3, #slider4').on('input', function(){
+                var slider1=$('#slider1').val();
+                var slider2=$('#slider2').val();
+                var slider3=$('#slider3').val();
+                var slider4=$('#slider4').val();
+                $('#output').css('border-top-left-radius', slider1 + '%');
+                $('#output').css('border-top-right-radius', slider2 + '%');
+                $('#output').css('border-bottom-left-radius', slider3 + '%');
+                $('#output').css('border-bottom-right-radius', slider4 + '%');
+                $('#box').val('border-radius:' +slider1+'% ' +slider2+'% '  +slider3+'% '  +slider4+'% ')
+            })
+        });
+
+        
+    </script>
+</body>
+</html>
